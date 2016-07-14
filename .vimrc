@@ -1,5 +1,6 @@
+call plug#begin('~/.vim/plugged')
+Plug 'crusoexia/vim-monokai'
+call plug#end()
 syntax enable
 colorscheme monokai
-
-filetype plugin indent on
-set tabstop=4
+set t_Co=256
