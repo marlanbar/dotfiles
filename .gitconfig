@@ -1,6 +1,7 @@
 [user]
     name = Martin Ezequiel Langberg
     email = martinlangberg@gmail.com
+
 [color]
     ui = true
 
@@ -19,3 +20,15 @@
     added = yellow
     changed = green
     untracked = red
+
+[push]
+    default = simple
+
+[url "https://bitbucket.org/"]
+    insteadOf = bb:
+
+[url "https://github.com/"]
+    insteadOf = gh:
+
+[url "https://gist.github.com/"]
+    insteadOf = gist:
