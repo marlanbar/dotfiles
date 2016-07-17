@@ -2,7 +2,7 @@
 
 This repository consists of configuration for any tools I use within my [Ubuntu][ubuntu] and [Vim][vim] development environment. 
 
-## Helpful resources:
+#### Helpful resources:
 
 [Getting started with dotfiles](https://medium.com/@webprolific/getting-started-with-dotfiles-43c3602fd789#.jlumd7l3h)
 
