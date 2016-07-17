@@ -1,0 +1,17 @@
+dropbox
+fish
+fluxgui
+gdebi
+google-chrome
+mendeleydesktop
+nuvolaplayer3
+octave
+pulseaudio-equalizer
+synaptic
+skype
+sublime-text
+tlp
+tmux
+vim
+vlc
+zsh
