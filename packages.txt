@@ -3,7 +3,6 @@ fish
 fluxgui
 gdebi
 gksu
-gnome-vim
 chromium-browser
 guake
 ipython
@@ -22,6 +21,7 @@ tlp
 tmux
 ubuntu-make
 vim
+vim-gnome
 vlc
 weechat-curses
 zsh
