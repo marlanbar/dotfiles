@@ -10,6 +10,8 @@
     ~/.tmux.conf: tmux/.tmux.conf
     ~/.vimrc: vim/.vimrc
     ~/.zshrc: zsh/.zshrc
+    ~/.vim/autoload/plug.vim: vim-plug/plug.vim
+
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

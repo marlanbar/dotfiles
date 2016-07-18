@@ -9,5 +9,8 @@ install-packages:
 set-shell:
 	chsh -s `which zsh`
 
+link-config:
+	./install
+
 show-notes:
 	cat ./post-install.txt

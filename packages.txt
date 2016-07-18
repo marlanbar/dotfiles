@@ -22,4 +22,5 @@ tmux
 ubuntu-make
 vim
 vlc
+weechat-curses
 zsh
