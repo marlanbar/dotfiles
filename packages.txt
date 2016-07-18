@@ -3,6 +3,7 @@ fish
 fluxgui
 gdebi
 gksu
+gnome-vim
 google-chrome
 guake
 ipython
