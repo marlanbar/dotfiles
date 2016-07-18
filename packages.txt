@@ -4,7 +4,7 @@ fluxgui
 gdebi
 gksu
 gnome-vim
-google-chrome
+chromium-browser
 guake
 ipython
 mendeleydesktop
