@@ -11,7 +11,7 @@
     ~/.tmux.conf: tmux/.tmux.conf
     ~/.vimrc: vim/.vimrc
     ~/.zshrc: zsh/.zshrc
-    ~/.vim/autoload/plug.vim: vim-plug/plug.vim
+    ~/.vim/autoload/plug.vim: vim/vim-plug/plug.vim
 
 
 - shell:
