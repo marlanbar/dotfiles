@@ -1,6 +1,6 @@
 - defaults:
     link:
-      relink: true
+      force: true
 
 - clean: ['~']
 
@@ -12,7 +12,7 @@
     ~/.zshrc: zsh/.zshrc
     ~/.vim/autoload/plug.vim: 
         create: true
-        path: vim/vim-plug/plug.vim
+        path: ./vim/vim-plug/plug.vim
 
 
 - shell:
