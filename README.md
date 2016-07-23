@@ -14,6 +14,7 @@ This repository consists of configuration for any tools I use within my [Ubuntu]
 
 [dotphiles](https://github.com/dotphiles/dotphiles)
 
+[Olical's dotfiles](https://github.com/Olical)
 
 
 --
