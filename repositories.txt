@@ -1,8 +1,0 @@
-ppa:nathan-renniewaldock/flux
-ppa:webupd8team/sublime-text-3
-'http://dl.google.com/linux/talkplugin/deb/ stable main'
-ppa:nilarimogard/webupd8
-'https://tiliado.eu/nuvolaplayer/repository/deb/ xenial stable'
-ppa:ubuntu-desktop/ubuntu-make
-ppa:octave/stable
-'http://desktop-download.mendeley.com/download/apt stable main'
