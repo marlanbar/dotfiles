@@ -24,6 +24,9 @@
 [push]
     default = simple
 
+[core]
+    editor = vim
+
 [url "https://bitbucket.org/"]
     insteadOf = bb:
 
