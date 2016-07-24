@@ -1,22 +1,27 @@
-"" vim-plug
+" vim-plug
 call plug#begin()
 
 "" Plugins
 Plug 'crusoexia/vim-monokai'
-Plug 'tpope/vim-sensible'
 Plug 'flazz/vim-colorschemes'
-
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 call plug#end()
 
 "" User interface
 syntax enable
 set t_Co=256
 colorscheme monokai
+set showmatch                       " Show matching braces when over one
+set ruler                           " Always show current position
+set antialias                       " Pretty fonts
+set number                          " Always show line-numbers
+set numberwidth=5                   " Line-number margin width
 
-"" General Edition config
+"" General edition config
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab smarttab
 set title
 
-""" Give us nice EOL (end of line) characters
-set list
-set listchars=tab:▸\ ,eol:¬
+"" General behaviour
+set autochdir               " CWD is always same as current file
+set ai                      " Autoindent
+set nocompatible            " ViM settings instead of Vi
