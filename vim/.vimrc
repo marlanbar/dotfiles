@@ -1,18 +1,19 @@
 " vim-plug
 call plug#begin()
 Plug 'crusoexia/vim-monokai'
-Plug 'flazz/vim-colorschemes'
-Plug 'scrooloose/nerdtree'
+" Plug 'flazz/vim-colorschemes'
 Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/syntastic'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
 call plug#end()
 
 "" User interface
 syntax enable
-set t_Co=256
 colorscheme monokai
+set term=screen-256color
 set showmatch               " Show matching braces when over one
 set ruler                   " Always show current position
 set antialias               " Pretty fonts
@@ -31,3 +32,4 @@ set nocompatible            " ViM settings instead of Vi
 
 "" Plugins config
 let g:airline_theme = 'badwolf'
+let g:airline_powerline_fonts = 1
