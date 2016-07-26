@@ -6,8 +6,12 @@ Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/syntastic'
+<<<<<<< Updated upstream
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
+=======
+Plug 'Valloric/YouCompleteMe'
+>>>>>>> Stashed changes
 call plug#end()
 
 "" User interface
