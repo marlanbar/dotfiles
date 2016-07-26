@@ -20,11 +20,20 @@ set ruler                   " Always show current position
 set antialias               " Pretty fonts
 set number                  " Always show line-numbers
 set numberwidth=5           " Line-number margin width
+set display=lastline        " Show as much as possible of the last line.
 set laststatus=2            " Always show the status bar
+set ttyfast                 " Faster redrawing.
+set lazyredraw              " Only redraw when necessary.
+set cursorline              " Find the current line quickly.
+set wrapscan                " Searches wrap around end-of-file.
+set report=0                " Always report changed lines.
+set synmaxcol=200           " Only highlight the first 200 columns.
+set list                    " Show non-printable characters.
+set title
 
 "" General edition config
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab smarttab
-set title
+set backspace=indent,eol,start     " Make backspace work as you would expect.
 
 "" General behaviour
 set autochdir               " CWD is always same as current file
@@ -32,5 +41,5 @@ set ai                      " Autoindent
 set nocompatible            " ViM settings instead of Vi
 
 "" Plugins config
-let g:airline_theme = 'badwolf'
-let g:airline_powerline_fonts = 1
+let g:airline_theme='badwolf'
+let g:airline_powerline_fonts=1
