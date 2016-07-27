@@ -28,7 +28,7 @@ set cursorline              " Find the current line quickly.
 set wrapscan                " Searches wrap around end-of-file.
 set report=0                " Always report changed lines.
 set synmaxcol=200           " Only highlight the first 200 columns.
-set list                    " Show non-printable characters.
+" set list                    " Show non-printable characters.
 set title
 
 "" General edition config
