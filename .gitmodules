@@ -6,8 +6,8 @@
 	url = https://github.com/junegunn/vim-plug
 [submodule "vim/vim-plug"]
 	path = vim/vim-plug
-    url = https://github.com/junegunn/vim-plug
-    ignore = dirty
+    	url = https://github.com/junegunn/vim-plug
+    	ignore = dirty
 [submodule "zsh/oh-my-zsh"]
 	path = zsh/oh-my-zsh
 	url = git@github.com:robbyrussell/oh-my-zsh.git
