@@ -1,3 +1,5 @@
+set shell=/bin/zsh
+
 " vim-plug
 call plug#begin()
 Plug 'crusoexia/vim-monokai'
