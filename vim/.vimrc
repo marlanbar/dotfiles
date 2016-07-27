@@ -1,7 +1,12 @@
 set shell=/bin/zsh
 
-" vim-plug
-call plug#begin()
+"" vim-plug
+call plug#begin('~/.vim/plugged')
+" Aux Functions
+function! Cond(cond, ...)
+  let opts = get(a:000, 0, {})
+  return a:cond ? opts : extend(opts, { 'on': [], 'for': [] })
+endfunction
 Plug 'crusoexia/vim-monokai'
 " Plug 'flazz/vim-colorschemes'
 Plug 'ConradIrwin/vim-bracketed-paste'
@@ -10,7 +15,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'Valloric/YouCompleteMe', Cond(has('cmake'), { 'do': './install.py' })
 Plug 'tpope/vim-fugitive'
 call plug#end()
 
@@ -50,3 +55,5 @@ let g:airline_powerline_fonts=1
 
 " NERD-Commenter
 let g:NERDSpaceDelims = 1   " Add spaces after comment delimiters by default
+
+
