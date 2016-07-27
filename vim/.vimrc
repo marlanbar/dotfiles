@@ -9,6 +9,7 @@ Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 "" User interface
@@ -41,5 +42,9 @@ set ai                      " Autoindent
 set nocompatible            " ViM settings instead of Vi
 
 "" Plugins config
+" Vim-airline
 let g:airline_theme='badwolf'
 let g:airline_powerline_fonts=1
+
+" NERD-Commenter
+let g:NERDSpaceDelims = 1   " Add spaces after comment delimiters by default
