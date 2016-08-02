@@ -53,6 +53,13 @@ set nocompatible            " ViM settings instead of Vi
 let g:airline_theme='badwolf'
 let g:airline_powerline_fonts=1
 let g:NERDSpaceDelims = 1   " Add spaces after comment delimiters by default
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 "" Key mappings
 " Allow saving of files as sudo when I forgot to start vim using sudo.
