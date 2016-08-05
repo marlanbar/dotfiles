@@ -5,11 +5,11 @@
 - clean: ['~']
 
 - link:
-    ~/.bashrc: bash/.bashrc
-    ~/.gitconfig: git/.gitconfig
-    ~/.tmux.conf: tmux/.tmux.conf
-    ~/.vimrc: vim/.vimrc
-    ~/.zshrc: zsh/.zshrc
+    ~/.bashrc: bash/bashrc
+    ~/.gitconfig: git/gitconfig
+    ~/.tmux.conf: tmux/tmux.conf
+    ~/.vimrc: vim/vimrc
+    ~/.zshrc: zsh/zshrc
     ~/.vim/autoload/plug.vim: 
         create: true
         path: ./vim/vim-plug/plug.vim
