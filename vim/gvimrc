@@ -1,0 +1,17 @@
+function! ToggleGUICruft()
+  if &guioptions=='i'
+    exec('set guioptions=imTrL')
+  else
+    exec('set guioptions=i')
+  endif
+endfunction
+
+map <F11> <Esc>:call ToggleGUICruft()<cr>
+
+" by default, hide gui menus
+set guioptions=i
+
+" 90 columns, 60 lines
+set co=90
+set lines=60
+let g:indentLine_color_gui = '#A4E57E'
