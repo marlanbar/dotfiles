@@ -34,13 +34,19 @@ set lazyredraw              " Only redraw when necessary.
 set cursorline              " Find the current line quickly.
 set wrapscan                " Searches wrap around end-of-file.
 set report=0                " Always report changed lines.
-set synmaxcol=200           " Only highlight the first 200 columns.
 " set list                    " Show non-printable characters.
 set title
+set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅
+set statusline=%F%m%r%h%w\ [TYPE=%Y\ %{&ff}]\
+\ [%l/%L\ (%p%%)
+filetype plugin indent on
 
 "" General edition config
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab smarttab
 set backspace=indent,eol,start     " Make backspace work as you would expect.
+au FileType py set autoindent
+au FileType py set smartindent
+au FileType py set textwidth=79 " PEP-8 Friendly2
 
 "" General behaviour
 set autochdir               " CWD is always same as current file
