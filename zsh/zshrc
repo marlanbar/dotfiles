@@ -53,9 +53,10 @@ HIST_STAMPS="dd.mm.yyyy"
 plugins=(git)
 
 # User configuration
-
+export HOSTALIASES=~/.hosts
 # export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
+
 
 source $ZSH/oh-my-zsh.sh
 
