@@ -83,3 +83,29 @@ fi
 # Example aliases
 alias zshconfig="$EDITOR ~/.zshrc"
 alias ohmyzsh="$EDITOR ~/.oh-my-zsh"
+
+# Custom Functions
+
+# Head gzipped files with arguments
+zhead() { zcat ${@: -1} | head ${@:1:$(($#-1))} ; }
+
+# Print a comma thousands separator
+thousandmark() {
+    sed -E ':a;s/([0-9])([0-9]{3}([^0-9]|$))/\1,\2/g;ta'
+}
+
+# Print the header and certain lines of the file side-by-side
+multiresume() {
+    rm -f /tmp/multiresume*
+    file="${@:$#}"
+    for row in 1 "${@:1:$#-1}"; do
+        zhead -n $row $file | tail -n 1 | tr '|' '\n' > /tmp/multiresume$row;
+    done;
+
+    paste /tmp/multiresume* | cat -n | column -s"$(echo -ne '\t')" -t
+}
+
+# Count value appearances in a column
+valcount() {
+    sort $1 | uniq -c
+}
