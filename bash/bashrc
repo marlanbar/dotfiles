@@ -47,12 +47,12 @@ esac
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
+# We have color support; assume it's compliant with Ecma-48
+# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+# a case would tend to support setf rather than setaf.)
+    color_prompt=yes
     else
-	color_prompt=
+    color_prompt=
     fi
 fi
 
@@ -115,3 +115,42 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# functions
+
+zhead() {
+    zcat ${@: -1} | head ${@:1:$(($#-1))} ;
+}
+
+readcols() {
+    col=$1
+    sep=${2:-|}
+
+    head_file=$(mktemp)
+    head -n 1 > $head_file
+
+    cols=$(cat $head_file | tr "$sep" '\n' | cat -n | grep -Ei "$col" | cut -f1 | tr '\n' ',' | tr -d ' ')1000
+    echo $header | cut -d "$sep" -f $cols
+    cut -d "$sep" -f $cols /dev/stdin
+    echo cut -d "$sep" -f $cols
+}
+
+body() {
+    IFS= read -r header
+    printf '%s\n' "$header"
+    "$@"
+}
+
+multiresume() {
+    rm -f /tmp/multiresume*
+    file="${@:$#}"
+    for row in 1 "${@:1:$#-1}"; do
+        zhead -n $row $file | tail -n 1 | tr '|' '\n' > /tmp/multiresume$row;
+    done;
+
+    paste /tmp/multiresume* | cat -n | column -s"$(echo -ne '\t')" -t
+}
+
+thousandmark() {
+    sed -E ':a;s/([0-9])([0-9]{3}([^0-9]|$))/\1,\2/g;ta'
+}
