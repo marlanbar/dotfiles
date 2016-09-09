@@ -15,13 +15,13 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'Valloric/YouCompleteMe', Cond(has('cmake'), { 'do': './install.py' })
 Plug 'tpope/vim-fugitive'
-Plug 'Yggdroot/indentLine'
+" Plug 'Yggdroot/indentLine'
 call plug#end()
 
 "" User interface
 syntax enable
 colorscheme monokai
-set term=screen-256color
+" set term=screen-256color
 set showmatch               " Show matching braces when over one
 set ruler                   " Always show current position
 set antialias               " Pretty fonts
@@ -36,9 +36,9 @@ set wrapscan                " Searches wrap around end-of-file.
 set report=0                " Always report changed lines.
 " set list                    " Show non-printable characters.
 set title
-set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅
-set statusline=%F%m%r%h%w\ [TYPE=%Y\ %{&ff}]\
-\ [%l/%L\ (%p%%)
+" set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅
+" set statusline=%F%m%r%h%w\ [TYPE=%Y\ %{&ff}]\
+" \ [%l/%L\ (%p%%)
 filetype plugin indent on
 
 "" General edition config
