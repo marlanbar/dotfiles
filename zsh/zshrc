@@ -112,5 +112,5 @@ valcount() {
 
 # Send mail with process status
 mailme() {
-    mail -s "Process finished with status $?" $1 < /dev/null
+    mail -s "Process $! finished with status $?" $1 < /dev/null
 }
