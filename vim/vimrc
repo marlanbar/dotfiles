@@ -44,6 +44,7 @@ filetype plugin indent on
 "" General edition config
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab smarttab
 set backspace=indent,eol,start     " Make backspace work as you would expect.
+set incsearch
 au FileType py set autoindent
 au FileType py set smartindent
 au FileType py set textwidth=79 " PEP-8 Friendly2
