@@ -2,21 +2,23 @@ set shell=/bin/zsh
 
 "" vim-plug
 call plug#begin('~/.vim/plugged')
+Plug 'crusoexia/vim-monokai'
+Plug 'ConradIrwin/vim-bracketed-paste'
+Plug 'itchyny/lightline.vim'
+Plug 'scrooloose/syntastic'
+" Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+" Plug 'Valloric/YouCompleteMe', Cond(has('cmake'), { 'do': './install.py' })
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+" Plug 'Yggdroot/indentLine'
+call plug#end()
+
 " Aux Functions
 function! Cond(cond, ...)
   let opts = get(a:000, 0, {})
   return a:cond ? opts : extend(opts, { 'on': [], 'for': [] })
 endfunction
-Plug 'crusoexia/vim-monokai'
-Plug 'ConradIrwin/vim-bracketed-paste'
-Plug 'itchyny/lightline.vim'
-Plug 'scrooloose/syntastic'
-Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree'
-Plug 'Valloric/YouCompleteMe', Cond(has('cmake'), { 'do': './install.py' })
-Plug 'tpope/vim-fugitive'
-" Plug 'Yggdroot/indentLine'
-call plug#end()
 
 "" User interface
 syntax enable
