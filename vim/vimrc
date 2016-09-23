@@ -2,16 +2,15 @@ set shell=/bin/zsh
 
 "" vim-plug
 call plug#begin('~/.vim/plugged')
+Plug 'nanotech/jellybeans.vim'
+Plug 'tomasr/molokai'
 Plug 'crusoexia/vim-monokai'
 Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/syntastic'
-" Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
-" Plug 'Valloric/YouCompleteMe', Cond(has('cmake'), { 'do': './install.py' })
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
-" Plug 'Yggdroot/indentLine'
 call plug#end()
 
 " Aux Functions
@@ -24,19 +23,19 @@ endfunction
 syntax enable
 colorscheme monokai
 " set term=screen-256color
-set showmatch               " Show matching braces when over one
-set ruler                   " Always show current position
-set antialias               " Pretty fonts
-set number                  " Always show line-numbers
-set numberwidth=5           " Line-number margin width
-set display=lastline        " Show as much as possible of the last line.
-set laststatus=2            " Always show the status bar
-set ttyfast                 " Faster redrawing.
-set lazyredraw              " Only redraw when necessary.
-set cursorline              " Find the current line quickly.
-set wrapscan                " Searches wrap around end-of-file.
-set report=0                " Always report changed lines.
-" set list                    " Show non-printable characters.
+set showmatch                   " Show matching braces when over one
+set ruler                       " Always show current position
+set antialias                   " Pretty fonts
+set number                      " Always show line-numbers
+set numberwidth =5             " Line-number margin width
+set display     =lastline      " Show as much as possible of the last line.
+set laststatus  =2             " Always show the status bar
+set ttyfast                     " Faster redrawing.
+set lazyredraw                  " Only redraw when necessary.
+set cursorline                  " Find the current line quickly.
+set wrapscan                    " Searches wrap around end-of-file.
+set report      =0             " Always report changed lines.
+" set list                      " Show non-printable characters.
 set title
 " set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅
 " set statusline=%F%m%r%h%w\ [TYPE=%Y\ %{&ff}]\
@@ -44,20 +43,25 @@ set title
 filetype plugin indent on
 
 "" General edition config
-set tabstop=4 softtabstop=4 shiftwidth=4 expandtab smarttab
-set backspace=indent,eol,start     " Make backspace work as you would expect.
-set incsearch
+set tabstop     =4 
+set softtabstop =4 
+set shiftwidth  =4 
+set expandtab 
+set smarttab
+set backspace   =indent,eol,start  " Make backspace work as you would expect.
+set incsearch                       " Highlight while searching with / or ?.
+
 au FileType py set autoindent
 au FileType py set smartindent
-au FileType py set textwidth=79 " PEP-8 Friendly2
+au FileType py set textwidth = 79   " PEP-8 Friendly2
 
 "" General behaviour
-set autochdir               " CWD is always same as current file
-set ai                      " Autoindent
-set nocompatible            " ViM settings instead of Vi
-
+set autochdir                       " CWD is always same as current file
+set ai                              " Autoindent
+set nocompatible                    " ViM settings instead of Vi
+set mouse =a
 "" Plugins config
-let g:NERDSpaceDelims = 1   " Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1          " Add spaces after comment delimiters by default
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -75,3 +79,15 @@ inoremap <A-j> <Esc>:m .+1<CR>==gi
 inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
+
+" Put all temporary files under the same directory.
+" https://github.com/mhinz/vim-galore#handling-backup-swap-undo-and-viminfo-files
+set backup
+set backupdir   =$HOME/.vim/files/backup/
+set backupext   =-vimbackup
+set backupskip  =
+set directory   =$HOME/.vim/files/swap//
+set updatecount =100
+set undofile
+set undodir     =$HOME/.vim/files/undo/
+set viminfo     =$HOME/.vim/files/info/viminfo
