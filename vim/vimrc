@@ -84,6 +84,9 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 " https://github.com/mhinz/vim-galore#handling-backup-swap-undo-and-viminfo-files
 if exists('*mkdir') && !isdirectory($HOME.'/.vim/files')
   call mkdir($HOME.'/.vim/files')
+  call mkdir($HOME.'/.vim/files/backup')
+  call mkdir($HOME.'/.vim/files/swap')
+  call mkdir($HOME.'/.vim/files/info')
 endif
 set backup
 set backupdir   =$HOME/.vim/files/backup/
