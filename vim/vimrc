@@ -59,7 +59,7 @@ au FileType py set textwidth = 79   " PEP-8 Friendly2
 set autochdir                       " CWD is always same as current file
 set ai                              " Autoindent
 set nocompatible                    " ViM settings instead of Vi
-set mouse =a
+set mouse       =a
 "" Plugins config
 let g:NERDSpaceDelims = 1          " Add spaces after comment delimiters by default
 let g:syntastic_always_populate_loc_list = 1
