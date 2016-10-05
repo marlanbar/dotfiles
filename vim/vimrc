@@ -1,9 +1,7 @@
 "" vim-plug
 call plug#begin('~/.vim/plugged')
 Plug 'nanotech/jellybeans.vim'
-Plug 'tomasr/molokai'
 Plug 'crusoexia/vim-monokai'
-Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdtree'
@@ -21,7 +19,6 @@ endfunction
 "" User interface
 syntax enable
 colorscheme monokai
-" set term=screen-256color
 set showmatch                   " Show matching braces when over one
 set ruler                       " Always show current position
 set antialias                   " Pretty fonts
@@ -56,17 +53,14 @@ set autochdir                       " CWD is always same as current file
 set ai                              " Autoindent
 set nocompatible                    " ViM settings instead of Vi
 set mouse       =a
+
 "" Plugins config
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes':   [],'passive_filetypes': ['tex'] }
-let g:vimtex_quickfix_ignored_warnings = [
-    \ 'Underfull',
-    \ 'Overfull',
-    \ 'specifier changed to',
-  \ ]
+let g:vimtex_quickfix_ignored_warnings = ['Underfull', 'Overfull', 'specifier changed to']
 
 "" Key mappings
 " Allow saving of files as sudo when I forgot to start vim using sudo.
@@ -82,13 +76,13 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 " VimTeX mappings
 nmap <F5> <plug>(vimtex-compile-toggle)
 
-
 " Put all temporary files under the same directory.
 " https://github.com/mhinz/vim-galore#handling-backup-swap-undo-and-viminfo-files
 if exists('*mkdir') && !isdirectory($HOME.'/.vim/ml_files')
   call mkdir($HOME.'/.vim/ml_files')
   call mkdir($HOME.'/.vim/ml_files/backup')
   call mkdir($HOME.'/.vim/ml_files/swap')
+  call mkdir($HOME.'/.vim/ml_files/undo')
   call mkdir($HOME.'/.vim/ml_files/info')
 endif
 set backup
