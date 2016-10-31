@@ -46,7 +46,7 @@ set incsearch                       " Highlight while searching with / or ?.
 
 au FileType py set autoindent
 au FileType py set smartindent
-au FileType py set textwidth = 79   " PEP-8 Friendly2
+au FileType py set textwidth =79   " PEP-8 Friendly2
 
 "" General behaviour
 set autochdir                       " CWD is always same as current file

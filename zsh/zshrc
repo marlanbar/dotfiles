@@ -82,6 +82,7 @@ fi
 #
 # Example aliases
 alias zshconfig="$EDITOR ~/.zshrc"
+alias zshreload="source ~/.zshrc"
 alias ohmyzsh="$EDITOR ~/.oh-my-zsh"
 
 # Custom Functions
@@ -113,4 +114,26 @@ valcount() {
 # Send mail with process status
 mailme() {
     mail -s "Process $! finished with status $?" $1 < /dev/null
+}
+
+smux() {
+    if [ "X$1" = "X" ]; then
+        echo "usage: `basename $0` <host>"
+    fi
+
+    if [ "X$SSH_AUTH_SOCK" = "X" ]; then
+            eval `ssh-agent -s`
+            ssh-add $HOME/.ssh/id_rsa
+    fi
+
+    AUTOSSH_POLL=20
+    AUTOSSH_PORT=$(awk 'BEGIN { srand(); do r = rand()*32000; while ( r < 20000 ); printf("%d\n",r)  }' < /dev/null)
+    #AUTOSSH_GATETIME=30
+    #AUTOSSH_LOGFILE=$HOST.log
+    AUTOSSH_DEBUG=yes
+    #AUTOSSH_PATH=/usr/local/bin/ssh
+    export AUTOSSH_POLL AUTOSSH_LOGFILE AUTOSSH_DEBUG AUTOSSH_PATH AUTOSSH_GATETIME AUTOSSH_PORT
+    # -t is the ssh option to force a pseudo terminal (pty)
+    echo $@
+    autossh -t $@ "tmux -A new-session"
 }
