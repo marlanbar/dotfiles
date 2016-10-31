@@ -11,6 +11,7 @@
     ~/.vimrc: vim/vimrc
     ~/.gvimrc: vim/gvimrc
     ~/.zshrc: zsh/zshrc
+    ~/.oh-my-zsh: zsh/oh-my-zsh
     ~/.vim/autoload/plug.vim: 
         create: true
         path: ./vim/vim-plug/plug.vim
