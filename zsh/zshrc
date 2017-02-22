@@ -88,7 +88,9 @@ alias ohmyzsh="$EDITOR ~/.oh-my-zsh"
 # Custom Functions
 
 # Head gzipped files with arguments
-zhead() { zcat ${@: -1} | head ${@:1:$(($#-1))} ; }
+zhead() { 
+    zcat ${@: -1} | head ${@:1:$(($#-1))};
+}
 
 # Print a comma thousands separator
 thousandmark() {
