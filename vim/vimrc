@@ -30,6 +30,7 @@ set ttyfast                     " Faster redrawing.
 set lazyredraw                  " Only redraw when necessary.
 set cursorline                  " Find the current line quickly.
 set wrapscan                    " Searches wrap around end-of-file.
+set breakindent
 set report      =0              " Always report changed lines.
 " set list                      " Show non-printable characters.
 set title
