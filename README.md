@@ -1,6 +1,6 @@
 # dotfiles 
 
-This repository consists of configuration for any tools I use within my [Ubuntu][ubuntu] and [Vim][vim] development environment. 
+This repository consists of configuration for any tools I use within my Linux and vim development environment. 
 
 #### Helpful resources:
 
