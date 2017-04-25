@@ -17,9 +17,4 @@ This repository consists of configuration for any tools I use within my [Ubuntu]
 [Olical's dotfiles](https://github.com/Olical)
 
 
---
-[ubuntu]: https://www.ubuntu.com/
-[vim]: http://www.vim.org/
-
-
 
