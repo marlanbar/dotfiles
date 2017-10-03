@@ -63,11 +63,15 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
- else
-  export EDITOR='gvim'
-fi
+#if [[ -n $SSH_CONNECTION ]]; then
+#  export EDITOR='vim'
+# else
+#  export EDITOR='gvim'
+#fi
+
+# Always use vim
+export EDITOR='vim'
+
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -80,10 +84,11 @@ fi
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
+# Aliases
 alias zshconfig="$EDITOR ~/.zshrc"
 alias zshreload="source ~/.zshrc"
 alias ohmyzsh="$EDITOR ~/.oh-my-zsh"
+alias autossh='autossh -M $(($RANDOM%6400 + 1024))' 
 
 # Custom Functions
 

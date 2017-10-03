@@ -154,3 +154,7 @@ multiresume() {
 thousandmark() {
     sed -E ':a;s/([0-9])([0-9]{3}([^0-9]|$))/\1,\2/g;ta'
 }
+
+# Exports
+export PATH="/root/anaconda3/bin:$PATH"
+
