@@ -8,6 +8,12 @@ This repository consists of configuration for any tools I use within my Linux an
 3. After the creation of the symlinks, run PlugInstall in vim in order to install all the plugins.
 4. Profit!
 
+#### Requirements:
+
+- vim
+- zsh
+- tmux
+
 #### Helpful resources:
 
 [Getting started with dotfiles](https://medium.com/@webprolific/getting-started-with-dotfiles-43c3602fd789#.jlumd7l3h)
