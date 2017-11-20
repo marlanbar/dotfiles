@@ -13,6 +13,8 @@ This repository consists of configuration for any tools I use within my Linux an
 - vim
 - zsh
 - tmux
+- bash
+- git
 
 #### Helpful resources:
 
