@@ -1,6 +1,6 @@
 # dotfiles 
 
-This repository consists of configuration for any tools I use within my Linux and vim development environment. 
+This repository consists of configuration files for any tools I use within my Linux and vim development environment. The symlinks are created automagically thanks to Anish Athalye's dotbot.
 
 #### Use instructions:
 1. Download the repository to a folder in your home, preferably ~/.dotfiles
