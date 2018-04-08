@@ -16,7 +16,7 @@ ZSH_THEME="candy"
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
-DISABLE_AUTO_UPDATE="true"
+# DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
@@ -89,6 +89,8 @@ alias zshconfig="$EDITOR ~/.zshrc"
 alias zshreload="source ~/.zshrc"
 alias ohmyzsh="$EDITOR ~/.oh-my-zsh"
 alias autossh='autossh -M $(($RANDOM%6400 + 1024))' 
+alias pipenv='source ~/venv/bin/activate'
+alias tesis='cd ~/workspace/master-thesis'
 
 # Custom Functions
 

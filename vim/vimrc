@@ -1,11 +1,11 @@
 "" vim-plug
 call plug#begin('~/.vim/plugged')
-Plug 'nanotech/jellybeans.vim'
+"Plug 'nanotech/jellybeans.vim'
 Plug 'crusoexia/vim-monokai'
 Plug 'itchyny/lightline.vim'
-Plug 'scrooloose/syntastic'
+"Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-commentary'
+"Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'lervag/vimtex'
 Plug 'derekwyatt/vim-scala'
@@ -63,8 +63,8 @@ set shell=/bin/bash
 
 "" Plugins config
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes':   [],'passive_filetypes': ['tex'] }
 let g:vimtex_quickfix_ignored_warnings = ['Underfull', 'Overfull', 'specifier changed to']
