@@ -1,6 +1,20 @@
 # dotfiles 
 
-This repository consists of configuration for any tools I use within my Linux and vim development environment. 
+This repository consists of configuration files for any tools I use within my Linux and vim development environment. The symlinks are created automagically thanks to Anish Athalye's dotbot.
+
+#### Use instructions:
+1. Download the repository to a folder in your home, preferably ~/.dotfiles
+2. Run install.sh. The symlinks of each config file will be created in your home directory. 
+3. After the creation of the symlinks, run PlugInstall in vim in order to install all the plugins.
+4. Profit!
+
+#### Requirements:
+
+- vim
+- zsh
+- tmux
+- bash
+- git
 
 #### Helpful resources:
 
