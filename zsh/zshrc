@@ -90,7 +90,7 @@ alias zshreload="source ~/.zshrc"
 alias ohmyzsh="$EDITOR ~/.oh-my-zsh"
 alias autossh='autossh -M $(($RANDOM%6400 + 1024))' 
 # alias pipenv='source ~/venv/bin/activate'
-alias tesis='cd ~/workspace/master-thesis'
+alias kzus="kubectl --context='zooba-cilium-prod.us-east-1.k8s.tfgco.com'"
 
 # Custom Functions
 

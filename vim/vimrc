@@ -5,13 +5,12 @@ Plug 'crusoexia/vim-monokai'
 Plug 'itchyny/lightline.vim'
 "Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdtree'
+Plug 'https://github.com/w0rp/ale.git'
 "Plug 'tpope/vim-commentary'
 "Plug 'tpope/vim-fugitive'
 "Plug 'lervag/vimtex'
 "Plug 'derekwyatt/vim-scala'
 call plug#end()
-
-
 
 " Aux Functions
 function! Cond(cond, ...)
@@ -59,15 +58,30 @@ set autochdir                       " CWD is always same as current file
 set ai                              " Autoindent
 set nocompatible                    " ViM settings instead of Vi
 set mouse       =a
-set shell=/bin/bash
+set shell       =/bin/bash
 
 "" Plugins config
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes':   [],'passive_filetypes': ['tex'] }
-let g:vimtex_quickfix_ignored_warnings = ['Underfull', 'Overfull', 'specifier changed to']
+
+" Syntastic
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 0
+" let g:syntastic_check_on_open = 0
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes':   [],'passive_filetypes': ['tex'] }
+" let g:vimtex_quickfix_ignored_warnings = ['Underfull', 'Overfull', 'specifier changed to']
+
+" Ale linting and fixing
+let g:ale_fixers = {
+\   'python': ['black','isort'],
+\   'json': ['jq'],
+\}
+let g:ale_linters = {
+\   'python': ['pylint'],
+\}
+let g:ale_fix_on_save=1
+let g:ale_python_isort_options = '-sl -up -tc -m 3'
+nnoremap <C-k> :ALEPrevious -error<Enter>
+nnoremap <C-j> :ALENext -error<Enter>
 
 "" Key mappings
 " Allow saving of files as sudo when I forgot to start vim using sudo.
