@@ -23,6 +23,7 @@
 
 [push]
     default = simple
+    autoSetupRemote = true
 
 [core]
     editor = vim
@@ -46,3 +47,5 @@
 
 [url "https://gist.github.com/"]
     insteadOf = gist:
+[commit]
+	template = /Users/martinlangberg/.git-commit-msg

@@ -161,5 +161,7 @@ smux() {
 #unset __conda_setup
 # <<< conda initialize <<<
 
+# External variables and initializations
 source ~/env.sh
 
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
