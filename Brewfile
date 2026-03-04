@@ -16,6 +16,7 @@ brew "asdf"
 
 # Casks
 cask "iterm2"
+cask "maccy"
 cask "freelens"
 cask "visual-studio-code"
 
