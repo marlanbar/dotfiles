@@ -59,6 +59,9 @@ export HOSTALIASES=~/.hosts
 
 source $ZSH/oh-my-zsh.sh
 
+unsetopt inc_append_history
+unsetopt share_history
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -89,79 +92,47 @@ alias zshconfig="$EDITOR ~/.zshrc"
 alias zshreload="source ~/.zshrc"
 alias ohmyzsh="$EDITOR ~/.oh-my-zsh"
 alias autossh='autossh -M $(($RANDOM%6400 + 1024))' 
-# alias pipenv='source ~/venv/bin/activate'
+alias activate='source ~/venv/bin/activate'
 
 # Custom Functions
-
-# Head gzipped files with arguments
-zhead() { 
-    zcat ${@: -1} | head ${@:1:$(($#-1))};
+load_dotenv() {
+  if [[ -f .env ]]; then
+    set -a
+    source .env
+    set +a
+  fi
 }
 
-# Print a comma thousands separator
-thousandmark() {
-    sed -E ':a;s/([0-9])([0-9]{3}([^0-9]|$))/\1,\2/g;ta'
-}
-
-# Print the header and certain lines of the file side-by-side
-multiresume() {
-    rm -f /tmp/multiresume*
-    file="${@:$#}"
-    for row in 1 "${@:1:$#-1}"; do
-        zhead -n $row $file | tail -n 1 | tr '|' '\n' > /tmp/multiresume$row;
-    done;
-
-    paste /tmp/multiresume* | cat -n | column -s"$(echo -ne '\t')" -t
-}
-
-# Count value appearances in a column
-valcount() {
-    sort $1 | uniq -c
-}
-
-# Send mail with process status
-mailme() {
-    mail -s "Process $! finished with status $?" $1 < /dev/null
-}
-
-smux() {
-    if [ "X$1" = "X" ]; then
-        echo "usage: `basename $0` <host>"
-    fi
-
-    if [ "X$SSH_AUTH_SOCK" = "X" ]; then
-            eval `ssh-agent -s`
-            ssh-add $HOME/.ssh/id_rsa
-    fi
-
-    AUTOSSH_POLL=20
-    AUTOSSH_PORT=$(awk 'BEGIN { srand(); do r = rand()*32000; while ( r < 20000 ); printf("%d\n",r)  }' < /dev/null)
-    #AUTOSSH_GATETIME=30
-    #AUTOSSH_LOGFILE=$HOST.log
-    AUTOSSH_DEBUG=yes
-    #AUTOSSH_PATH=/usr/local/bin/ssh
-    export AUTOSSH_POLL AUTOSSH_LOGFILE AUTOSSH_DEBUG AUTOSSH_PATH AUTOSSH_GATETIME AUTOSSH_PORT
-    # -t is the ssh option to force a pseudo terminal (pty)
-    echo $@
-    autossh -t $@ "tmux -A new-session"
-}
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-#__conda_setup="$('/Users/martinlangberg/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-#if [ $? -eq 0 ]; then
-#    eval "$__conda_setup"
-#else
-#    if [ -f "/Users/martinlangberg/miniconda3/etc/profile.d/conda.sh" ]; then
-#        . "/Users/martinlangberg/miniconda3/etc/profile.d/conda.sh"
-#    else
-#        export PATH="/Users/martinlangberg/miniconda3/bin:$PATH"
-#    fi
-#fi
-#unset __conda_setup
-# <<< conda initialize <<<
+load_dotenv
 
 # External variables and initializations
-source ~/env.sh
+[[ -f ~/env.sh ]] && source ~/env.sh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+export PATH=$HOME/bin:$PATH
+. "$HOME/.asdf/asdf.sh"
+
+function aws-role() {
+    unset AWS_VAULT AWS_DEFAULT_REGION AWS_REGION AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN AWS_SECURITY_TOKEN AWS_SESSION_EXPIRATION AWS_PROFILE
+    eval $(aws-vault exec $1 -- env | grep AWS_ | sed 's/^/export /g')
+    export AWS_PROFILE=$1
+
+    # write aws temporary credentials to ~/.aws/temp_credentials
+    printenv | grep AWS_ > ~/.aws/temp_credentials
+}
+alias lens='open /Applications/Freelens.app'
+
+# Ensure SSH agent is running and has keys
+if [ -z "$SSH_AUTH_SOCK" ] || ! ssh-add -l >/dev/null 2>&1; then
+  eval "$(ssh-agent -s)" >/dev/null 
+  if [[ "$OSTYPE" == "darwin"* ]]; then
+    ssh-add --apple-use-keychain ~/.ssh/id_rsa >/dev/null 2>&1
+  else
+    ssh-add ~/.ssh/id_rsa >/dev/null 2>&1
+  fi
+fi
+
+
+# opencode
+export PATH=/Users/martin.langberg/.opencode/bin:$PATH
+export PATH="$HOME/.local/bin:$PATH"

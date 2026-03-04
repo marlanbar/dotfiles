@@ -1,0 +1,56 @@
+{
+    "files.associations": {
+        "*.sql": "sql",
+        "*.yml": "yaml"
+    },
+    "githubPullRequests.pullBranch": "never",
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "git.blame.statusBarItem.enabled": true,
+    "git.blame.editorDecoration.enabled": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "docker.extension.enableComposeLanguageServer": false,
+    "[dockercompose]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "advanced",
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": true
+        },
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[github-actions-workflow]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "redhat.telemetry.enabled": false,
+    "editor.minimap.enabled": false,
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "extensions.ignoreRecommendations": true,
+    "workbench.colorTheme": "Default Light Modern",
+    "githubPullRequests.terminalLinksHandler": "github",
+    "pgsql.serverGroups": [
+        {
+            "name": "Servers",
+            "id": "D3291471-2EC1-4A3C-969B-46CF15BEC9C6",
+            "isDefault": true
+        }
+    ],
+    "database-client.autoSync": true,
+    "claudeCode.preferredLocation": "panel",
+    "chat.viewSessions.orientation": "stacked",
+    "docker.extension.dockerEngineAvailabilityPrompt": false,
+    "chat.mcp.gallery.enabled": true,
+    "claudeCode.useTerminal": true,
+    "window.autoDetectColorScheme": true,
+    "githubPullRequests.pushBranch": "always",
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": true,
+        "scminput": false
+    },
+    "claudeCode.disableLoginPrompt": true,
+    "claudeCode.selectedModel": "default"
+}

@@ -12,9 +12,17 @@
     ~/.gvimrc: vim/gvimrc
     ~/.zshrc: zsh/zshrc
     ~/.oh-my-zsh: zsh/oh-my-zsh
-    ~/.vim/autoload/plug.vim: 
+    ~/.vim/autoload/plug.vim:
         create: true
         path: ./vim/vim-plug/plug.vim
+    ~/.claude/settings.json: claude/settings.json
+    ~/.claude/CLAUDE.md: claude/CLAUDE.md
+    ~/.config/gh/config.yml:
+        create: true
+        path: gh/config.yml
+    ~/Library/Application Support/Code/User/settings.json:
+        create: true
+        path: vscode/settings.json
 
 
 - shell:

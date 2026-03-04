@@ -1,34 +1,34 @@
-# dotfiles 
+# dotfiles
 
-This repository consists of configuration files for any tools I use within my Linux and vim development environment. The symlinks are created automagically thanks to Anish Athalye's dotbot.
+Configuration files for my development environment, managed with [dotbot](https://github.com/anishathalye/dotbot) for automatic symlink creation.
 
-#### Use instructions:
-1. Download the repository to a folder in your home, preferably ~/.dotfiles
-2. Run install.sh. The symlinks of each config file will be created in your home directory. 
-3. After the creation of the symlinks, run PlugInstall in vim in order to install all the plugins.
-4. Profit!
+## What's included
 
-#### Requirements:
+- **zsh** — oh-my-zsh, aliases, AWS/kubectl helpers, SSH agent setup
+- **vim** — vim-plug, ALE linting, NERDTree, monokai theme
+- **tmux** — vim-style navigation, sane splits, TPM plugins
+- **git** — aliases, GPG signing, URL shorthands (`gh:`, `bb:`, `gist:`)
+- **gh** — GitHub CLI preferences and aliases (`config.yml` only; `hosts.yml` is excluded)
+- **vscode** — editor settings
+- **claude** — Claude Code settings and global instructions (`CLAUDE.md`)
 
-- vim
+## Setup
+
+1. Clone the repository to `~/.dotfiles`
+2. Run `./install` — symlinks will be created in your home directory
+3. Open vim and run `:PlugInstall` to install plugins
+4. Create `~/env.sh` with any machine-specific environment variables (not tracked; safely skipped if missing)
+
+## Requirements
+
 - zsh
+- vim
 - tmux
-- bash
 - git
 
-#### Helpful resources:
+## Helpful resources
 
-[Getting started with dotfiles](https://medium.com/@webprolific/getting-started-with-dotfiles-43c3602fd789#.jlumd7l3h)
-
-[Getting started with dotfiles - Dries Vints](https://driesvints.com/blog/getting-started-with-dotfiles/)
-
-[Managing your dotfiles](http://www.anishathalye.com/2014/08/03/managing-your-dotfiles/)
-
-[dotfiles.github.io](http://dotfiles.github.io/)
-
-[dotphiles](https://github.com/dotphiles/dotphiles)
-
-[Olical's dotfiles](https://github.com/Olical)
-
-
-
+- [Getting started with dotfiles](https://medium.com/@webprolific/getting-started-with-dotfiles-43c3602fd789#.jlumd7l3h)
+- [Getting started with dotfiles - Dries Vints](https://driesvints.com/blog/getting-started-with-dotfiles/)
+- [Managing your dotfiles](http://www.anishathalye.com/2014/08/03/managing-your-dotfiles/)
+- [dotfiles.github.io](http://dotfiles.github.io/)

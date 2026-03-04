@@ -1,6 +1,7 @@
 [user]
-    name = Martin Ezequiel Langberg
-    email = martinlangberg@gmail.com
+	name = Martin Ezequiel Langberg
+	email = martin.langberg@sequra.es
+	signingkey = 5A5EB9C1CF1ABB447872701EF5FBF1D03B046632
 
 [color]
     ui = true
@@ -22,22 +23,25 @@
 #     untracked = red
 
 [push]
-    default = simple
+	default = current
     autoSetupRemote = true
 
 [core]
     editor = vim
+	excludesfile = ~/.gitignore
 
 [diff]
     tool = vimdiff
 
 [alias]
-    st = status
+	st = status
     ci = commit
-    co = checkout
+	co = checkout
     br = branch
     unstage = reset HEAD --
     last = log -1 HEAD
+	b = branch
+	lt = log --pretty=oneline --graph --all
 
 [url "https://bitbucket.org/"]
     insteadOf = bb:
@@ -48,4 +52,9 @@
 [url "https://gist.github.com/"]
     insteadOf = gist:
 [commit]
-	template = /Users/martinlangberg/.git-commit-msg
+	template = ~/.git-commit-msg
+	gpgSign = true
+[branch "master"]
+	rebase = true
+[gpg]
+	program = /opt/homebrew/bin/gpg
