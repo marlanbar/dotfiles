@@ -11,20 +11,15 @@ Configuration files for my development environment, managed with [dotbot](https:
 - **gh** — GitHub CLI preferences and aliases (`config.yml` only; `hosts.yml` is excluded)
 - **vscode** — editor settings
 - **claude** — Claude Code settings and global instructions (`CLAUDE.md`)
+- **Brewfile** — Homebrew packages, casks, and VS Code extensions
 
 ## Setup
 
 1. Clone the repository to `~/.dotfiles`
-2. Run `./install` — symlinks will be created in your home directory
-3. Open vim and run `:PlugInstall` to install plugins
-4. Create `~/env.sh` with any machine-specific environment variables (not tracked; safely skipped if missing)
-
-## Requirements
-
-- zsh
-- vim
-- tmux
-- git
+2. Install [Homebrew](https://brew.sh) if not already present
+3. Run `./install` — installs Homebrew packages and creates symlinks
+4. Open vim and run `:PlugInstall` to install plugins
+5. Create `~/env.sh` with any machine-specific environment variables (not tracked; safely skipped if missing)
 
 ## Helpful resources
 
