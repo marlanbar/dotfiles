@@ -110,7 +110,7 @@ load_dotenv
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 export PATH=$HOME/bin:$PATH
-. "$HOME/.asdf/asdf.sh"
+[[ -f "$HOME/.asdf/asdf.sh" ]] && . "$HOME/.asdf/asdf.sh"
 
 function aws-role() {
     unset AWS_VAULT AWS_DEFAULT_REGION AWS_REGION AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN AWS_SECURITY_TOKEN AWS_SESSION_EXPIRATION AWS_PROFILE
@@ -134,5 +134,5 @@ fi
 
 
 # opencode
-export PATH=/Users/martin.langberg/.opencode/bin:$PATH
+export PATH=$HOME/.opencode/bin:$PATH
 export PATH="$HOME/.local/bin:$PATH"
